@@ -32,7 +32,7 @@ searchForm.addEventListener("submit", function (event) {
 
 async function get(city) {
   await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bb2d5f804f01204832fd06bc21f135ed&units=metric`
+    `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid={yourKey}&units=metric`
   )
     .then((res) => res.json())
     .then((json) => {
@@ -69,7 +69,7 @@ function getWeather(a) {
 getWeather();
 async function seven(lon, lat) {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=bb2d5f804f01204832fd06bc21f135ed&units=metric`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid={yourKey}&units=metric`
   );
   sevenDay = await response.json();
 
